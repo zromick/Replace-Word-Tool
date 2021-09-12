@@ -19,17 +19,20 @@ To:
 
 "It's the best way to treat infections,” said *Henry Williams*, associate professor in the Department of Biochemistry and Biophysics at *Darnell* University. *Williams* works with Dr. *Diamond*, one of the principal investigators in the research study.
 
+#### Step 1: INTRODUCTION. Click "Next" to begin.
 
-#### Step 1: INPUT TEXT. Add the text that will be replaced. Check the box next to "Automatically Ignore Words in the Official Scrabble Player's Dictionary" to isolate proper nouns.
+![Introduction Example](public/images/intro-1.png "Introduction")
+
+#### Step 2: INPUT TEXT. Add the text that will be replaced. Check the box next to "Automatically Ignore Words in the Official Scrabble Player's Dictionary" to isolate proper nouns.
 
 ![Input Text Example](public/images/inputText-1.png "Input Text")
 
-#### 2. STEP 2: MANAGE WORDS. Click the "+" icon next to each word to create a replacement word.
+#### Step 3: MANAGE WORDS. Click the "+" icon next to each word to create a replacement word.
 
 ![Manage Words Example](public/images/manageWords-1.png "Manage Words")
 
 ![Manage Words Example](public/images/manageWords-2.png "Manage Words")
 
-#### 3. Step 3: GENERATE TEXT. Click "Replace" to generate output text and then "Copy".
+#### Step 4: GENERATE TEXT. Click "Replace" to generate output text and then "Copy".
 
 ![Generate Text Example](public/images/generateText-1.png "Generate Text")

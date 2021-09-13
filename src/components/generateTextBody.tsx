@@ -10,9 +10,7 @@ import styles from '../styles.module.scss';
 
 export interface GenerateTextBodyProps {
   replaceAllIncludedWords: () => void,
-  setCopied: Dispatch<SetStateAction<boolean>>,
   setSnackbar: Dispatch<SetStateAction<SnackbarModel>>,
-  copied: boolean,
 }
 
 const GenerateTextBody = (props: GenerateTextBodyProps) => {

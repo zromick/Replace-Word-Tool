@@ -9,10 +9,6 @@ const ReplaceWizardContainer = () => {
 	let [includedWords, updateIncludedWords] = useState([] as Word[]);
 	let [allWordsRaw, updateAllWordsRaw] = useState([] as string[]);
 	let [autoExcludeOSPD, setAutoExcludeOSPD] = useState(true);
-	// Paste text and sort words into "Excluded" or "Included"
-	let [copied, setCopied] = useState(false);
-	let [transferToReplacing, setTransferToReplacing] = useState(false);
-	let [transferToIgnoring, setTransferToIgnoring] = useState(false);
 	let [snackbar, setSnackbar] = useState<SnackbarModel>({ open: false, message: '', severity: 'success' });
 	let [currentStep, setCurrentStep] = useState(0);
 	let [nextDisabled, setNextDisabled] = useState(false);
@@ -24,25 +20,23 @@ const ReplaceWizardContainer = () => {
 		// Default exlusions include English Scrabble words and English contractions.
 		let defaultExcludedWords = ospd().concat(wikiContractions().map(contraction => contraction.toUpperCase()));
 		if (userTextArea) {
-			// Split all user text into an array when hitting white space, line breaks, and dashes.
+			// Split all user text into an array when hitting white space, line breaks, and M-dashes.
 			// Filter out blank strings with .filter(i => i) or ^$. Actually unsure if this does anything, but ^$ should be O(n) faster.
 			// Split on this if you want dashes out: (/\s+|-). Example: tip-top becomes tip and top
-			allWordsRaw = userTextArea.value.split(/\s+|^$/);
+			allWordsRaw = userTextArea.value.split(/\s+|—|^$/);
 			allWordsRaw.map((word, wordIndex) => {
-				// Rename keys to uppercase and without punctuation (except apostrophes)
-				let key = word.replace(/[^\w\s']/g, "").toUpperCase();
-				// If the cleaned word is in the Scrabble Dictionary, exclude
+				// Word keys will be managed in uppercase
+				let key = word.toUpperCase();
 				// Removed functionality for now: If the uncleaned word contains a number, exclude (|| /\d/.test(word))
-				if (defaultExcludedWords.indexOf(key) !== -1 && autoExcludeOSPD) {
+				// If the word (minus punctuation, see the regex) is in the Scrabble Dictionary and the user has checked the OSPD box, exclude it.
+				if (defaultExcludedWords.indexOf(key.replace(/[^\w\s]/g, "")) !== -1 && autoExcludeOSPD) {
 					// If the word is a new excluded word, push it.
 					let excludedWordIndex = (excludedWordsTemp.map(word => Object.keys(word)[0])).indexOf(key);
 					if (excludedWordIndex === -1) {
-						// console.log(excludedWordsTemp, excludedWordIndex, key, wordIndex);
 						excludedWordsTemp.push({ [key]: { 'default': [wordIndex] } })
 					}
 					// Else give the existing key more context.
 					else {
-						// console.log(excludedWordsTemp, excludedWordIndex, key, wordIndex);
 						excludedWordsTemp[excludedWordIndex][key]['default'].push(wordIndex);
 					}
 				} else {
@@ -69,7 +63,6 @@ const ReplaceWizardContainer = () => {
 		let includedWordIndex = (includedWordsTemp.map(word => Object.keys(word)[0])).indexOf(key);
 		includedWordsTemp[includedWordIndex][key]['default'] = [];
 		includedWordsTemp[includedWordIndex][key][replacementWord] = wordIndeces;
-		// console.log(`add`, includedWordsTemp, includedWordIndex, key, replacementWord, wordIndeces);
 		updateIncludedWords([...includedWordsTemp]);
 	}
 
@@ -79,7 +72,6 @@ const ReplaceWizardContainer = () => {
 		let replacementField = includedWordsTemp[includedWordIndex][key];
 		delete Object.assign(replacementField, { [newReplacement]: replacementField[oldReplacement] })[oldReplacement];
 		updateIncludedWords([...includedWordsTemp]);
-		// console.log(`update`, includedWordsTemp, includedWordIndex, key, oldReplacement, newReplacement);
 	}
 
 	const handleNext = () => {
@@ -90,10 +82,7 @@ const ReplaceWizardContainer = () => {
 		if (currentStep === 2) {
 			setNextDisabled(true);
 		}
-		setSnackbar({ open: false, message: '', severity: 'success' })
-		setCopied(false);
-		setTransferToReplacing(false);
-		setTransferToIgnoring(false);
+		setSnackbar({ open: false, message: '', severity: 'success' });
 	}
 
 	const handlePrevious = () => {
@@ -104,10 +93,7 @@ const ReplaceWizardContainer = () => {
 		if (nextDisabled) {
 			setNextDisabled(false);
 		}
-		setSnackbar({ open: false, message: '', severity: 'success' })
-		setCopied(false);
-		setTransferToReplacing(false);
-		setTransferToIgnoring(false);
+		setSnackbar({ open: false, message: '', severity: 'success' });
 	}
 
 	const handleCancel = () => {
@@ -118,10 +104,7 @@ const ReplaceWizardContainer = () => {
 		updateIncludedWords([]);
 		updateAllWordsRaw([]);
 		setAutoExcludeOSPD(true);
-		setSnackbar({ open: false, message: '', severity: 'success' })
-		setCopied(false);
-		setTransferToReplacing(false);
-		setTransferToIgnoring(false);
+		setSnackbar({ open: false, message: '', severity: 'success' });
 	}
 
 	const handleImport = () => {
@@ -146,7 +129,6 @@ const ReplaceWizardContainer = () => {
 		_.pull(excludedWords, word);
 		updateExcludedWords([...excludedWords]);
 		updateIncludedWords([...includedWords]);
-		// setTransferToReplacing(true);
 	}
 
 	// Sent into the handleWordListChange prop for wordsWithContext
@@ -155,7 +137,6 @@ const ReplaceWizardContainer = () => {
 		_.pull(includedWords, word);
 		updateExcludedWords([...excludedWords]);
 		updateIncludedWords([...includedWords]);
-		// setTransferToIgnoring(true);
 	}
 
 	const replaceAllIncludedWords = () => {
@@ -198,9 +179,6 @@ const ReplaceWizardContainer = () => {
 			replaceAllIncludedWords={replaceAllIncludedWords}
 			addReplacementWord={addReplacementWord}
 			updateReplacementWord={updateReplacementWord}
-			setCopied={setCopied}
-			setTransferToReplacing={setTransferToReplacing}
-			setTransferToIgnoring={setTransferToIgnoring}
 			setSnackbar={setSnackbar}
 			setAutoExcludeOSPD={setAutoExcludeOSPD}
 			handleNext={handleNext}
@@ -212,9 +190,6 @@ const ReplaceWizardContainer = () => {
 			excludedWords={excludedWords}
 			includedWords={includedWords}
 			allWordsRaw={allWordsRaw}
-			copied={copied}
-			transferToReplacing={transferToReplacing}
-			transferToIgnoring={transferToIgnoring}
 			snackbar={snackbar}
 			autoExcludeOSPD={autoExcludeOSPD}
 		/>

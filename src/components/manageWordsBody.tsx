@@ -10,14 +10,10 @@ export interface ManageWordsBodyProps {
   handleExcludeWord: (word: Word) => void,
   addReplacementWord: (key: string, replacementWord: string, wordIndeces: number[]) => void,
   updateReplacementWord: (key: string, oldReplacement: string, newReplacement: string) => void,
-  setTransferToReplacing: Dispatch<SetStateAction<boolean>>,
-  setTransferToIgnoring: Dispatch<SetStateAction<boolean>>,
   setSnackbar: Dispatch<SetStateAction<SnackbarModel>>,
   excludedWords: Word[],
   includedWords: Word[],
   allWordsRaw: string[],
-  transferToReplacing: boolean,
-  transferToIgnoring: boolean,
 }
 
 const ManageWordsBody = (props: ManageWordsBodyProps) => {

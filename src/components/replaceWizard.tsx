@@ -22,9 +22,6 @@ export interface ReplaceWizardProps {
   replaceAllIncludedWords: () => void,
   addReplacementWord: (key: string, replacementWord: string, wordIndeces: number[]) => void,
   updateReplacementWord: (key: string, oldReplacement: string, newReplacement: string) => void,
-  setCopied: Dispatch<SetStateAction<boolean>>,
-  setTransferToReplacing: Dispatch<SetStateAction<boolean>>,
-  setTransferToIgnoring: Dispatch<SetStateAction<boolean>>,
   setSnackbar: Dispatch<SetStateAction<SnackbarModel>>,
   setAutoExcludeOSPD: Dispatch<SetStateAction<boolean>>,
   handleNext: (step: ReplaceWizardSteps) => void;
@@ -36,9 +33,6 @@ export interface ReplaceWizardProps {
   excludedWords: Word[],
   includedWords: Word[],
   allWordsRaw: string[];
-  copied: boolean,
-  transferToReplacing: boolean,
-  transferToIgnoring: boolean,
   snackbar: SnackbarModel,
   autoExcludeOSPD: boolean,
 }
@@ -46,18 +40,11 @@ export interface ReplaceWizardProps {
 const ReplaceWizard = (props: ReplaceWizardProps) => {
   const {
     sortWords,
-    // sortByFrequency,
-    // sortAlphabetically,
-    // handleImport,
-    // handleExport,
     handleExcludeWord,
     handleIncludeWord,
     replaceAllIncludedWords,
     addReplacementWord,
     updateReplacementWord,
-    setCopied,
-    setTransferToReplacing,
-    setTransferToIgnoring,
     setSnackbar,
     setAutoExcludeOSPD,
     handleNext,
@@ -69,9 +56,6 @@ const ReplaceWizard = (props: ReplaceWizardProps) => {
     excludedWords,
     includedWords,
     allWordsRaw,
-    copied,
-    transferToReplacing,
-    transferToIgnoring,
     snackbar,
     autoExcludeOSPD,
   } = props;
@@ -101,22 +85,16 @@ const ReplaceWizard = (props: ReplaceWizardProps) => {
                   handleIncludeWord={handleIncludeWord}
                   addReplacementWord={addReplacementWord}
                   updateReplacementWord={updateReplacementWord}
-                  setTransferToReplacing={setTransferToReplacing}
-                  setTransferToIgnoring={setTransferToIgnoring}
                   setSnackbar={setSnackbar}
                   excludedWords={excludedWords}
                   includedWords={includedWords}
                   allWordsRaw={allWordsRaw}
-                  transferToReplacing={transferToReplacing}
-                  transferToIgnoring={transferToIgnoring}
                 />
               )}
               {currentStep === ReplaceWizardSteps.GENERATE_TEXT && (
                 <GenerateTextBody
                   replaceAllIncludedWords={replaceAllIncludedWords}
                   setSnackbar={setSnackbar}
-                  setCopied={setCopied}
-                  copied={copied}
                 />
               )}
             </Paper>

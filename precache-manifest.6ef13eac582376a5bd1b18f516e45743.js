@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b3df40ba284c477b6b60f603f33cf68",
+    "revision": "6ad4ed73bf26b2adcaec26f412408a54",
     "url": "/Replace-Word-Tool/index.html"
   },
   {
-    "revision": "f1e2a621ecb2425e7d6b",
-    "url": "/Replace-Word-Tool/static/css/main.926b2143.chunk.css"
+    "revision": "a9e5ba1c229023013902",
+    "url": "/Replace-Word-Tool/static/css/main.6367c30e.chunk.css"
   },
   {
     "revision": "44f3f472c630a5051d89",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Replace-Word-Tool/static/js/2.d42214dd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f1e2a621ecb2425e7d6b",
+    "revision": "a9e5ba1c229023013902",
     "url": "/Replace-Word-Tool/static/js/main.9bc2a4fd.chunk.js"
   },
   {

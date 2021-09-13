@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Replace-Word-Tool/static/css/main.926b2143.chunk.css",
+    "main.css": "/Replace-Word-Tool/static/css/main.6367c30e.chunk.css",
     "main.js": "/Replace-Word-Tool/static/js/main.9bc2a4fd.chunk.js",
     "main.js.map": "/Replace-Word-Tool/static/js/main.9bc2a4fd.chunk.js.map",
     "runtime-main.js": "/Replace-Word-Tool/static/js/runtime-main.98e287cd.js",
@@ -8,15 +8,15 @@
     "static/js/2.d42214dd.chunk.js": "/Replace-Word-Tool/static/js/2.d42214dd.chunk.js",
     "static/js/2.d42214dd.chunk.js.map": "/Replace-Word-Tool/static/js/2.d42214dd.chunk.js.map",
     "index.html": "/Replace-Word-Tool/index.html",
-    "precache-manifest.813272f7caaa812a2144533b9894c7dc.js": "/Replace-Word-Tool/precache-manifest.813272f7caaa812a2144533b9894c7dc.js",
+    "precache-manifest.6ef13eac582376a5bd1b18f516e45743.js": "/Replace-Word-Tool/precache-manifest.6ef13eac582376a5bd1b18f516e45743.js",
     "service-worker.js": "/Replace-Word-Tool/service-worker.js",
-    "static/css/main.926b2143.chunk.css.map": "/Replace-Word-Tool/static/css/main.926b2143.chunk.css.map",
+    "static/css/main.6367c30e.chunk.css.map": "/Replace-Word-Tool/static/css/main.6367c30e.chunk.css.map",
     "static/js/2.d42214dd.chunk.js.LICENSE.txt": "/Replace-Word-Tool/static/js/2.d42214dd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.98e287cd.js",
     "static/js/2.d42214dd.chunk.js",
-    "static/css/main.926b2143.chunk.css",
+    "static/css/main.6367c30e.chunk.css",
     "static/js/main.9bc2a4fd.chunk.js"
   ]
 }

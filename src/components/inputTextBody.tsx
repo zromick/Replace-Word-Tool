@@ -38,7 +38,7 @@ const InputTextBody = (props: InputTextBodyProps) => {
       <Grid item xs={12}>
         <div className={styles.introSpacing}>
           <Typography variant="body1" >
-            Enter a body of text below, or type one. Or try this <Link href='#' onClick={() => handleSampleText()}>sample text.</Link>
+            Enter a body of text below, or type one. Or try pasting this <Link href='#' onClick={() => handleSampleText()}>sample text</Link> and follow the <Link href='https://github.com/zromick/Replace-Word-Tool/tree/main'>tutorial</Link> in the documentation.
           </Typography>
         </div>
       </Grid>

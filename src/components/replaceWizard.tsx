@@ -27,6 +27,7 @@ export interface ReplaceWizardProps {
   handleNext: (step: ReplaceWizardSteps) => void;
   handlePrevious: (step: ReplaceWizardSteps) => void;
   handleCancel: () => void;
+  handleSampleText: () => void;
   nextDisabled: boolean;
   previousDisabled: boolean;
   currentStep: ReplaceWizardSteps;
@@ -50,6 +51,7 @@ const ReplaceWizard = (props: ReplaceWizardProps) => {
     handleNext,
     handlePrevious,
     handleCancel,
+    handleSampleText,
     nextDisabled,
     previousDisabled,
     currentStep,
@@ -77,6 +79,7 @@ const ReplaceWizard = (props: ReplaceWizardProps) => {
                   sortWords={sortWords}
                   setAutoExcludeOSPD={setAutoExcludeOSPD}
                   autoExcludeOSPD={autoExcludeOSPD}
+                  handleSampleText={handleSampleText}
                 />
               )}
               {currentStep === ReplaceWizardSteps.MANAGE_WORDS && (

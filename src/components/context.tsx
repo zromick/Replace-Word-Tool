@@ -40,6 +40,7 @@ const Context = (props: ContextProps) => {
             ? <div>{`${wordCleaned} → `}
               <Input
                 color="primary"
+                autoFocus
                 defaultValue={replacementWord}
                 onChange={(event) => updateReplacementWord(wordCleaned, replacementWord, event.target.value)}
               />

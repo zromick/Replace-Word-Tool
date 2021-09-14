@@ -72,7 +72,6 @@ const GenerateTextBody = (props: GenerateTextBodyProps) => {
               onClick={() => {
                 const finalTextArea = document.getElementById('finalTextArea') as HTMLTextAreaElement;;
                 navigator.clipboard.writeText(finalTextArea.value);
-                // setCopied(true);
                 setSnackbar({ open: true, message: `The generated text has been copied to clipboard!`, severity: 'success' });
               }}
             >

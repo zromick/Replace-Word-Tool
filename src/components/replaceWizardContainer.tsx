@@ -107,6 +107,11 @@ const ReplaceWizardContainer = () => {
 		setSnackbar({ open: false, message: '', severity: 'success' });
 	}
 
+	const handleSampleText = () => {
+		navigator.clipboard.writeText(`"It's the best way to treat infections,” said Gerald Jang, associate professor in the Department of Biochemistry and Biophysics at Winthrup University. Jang works with Dr. Corbella, one of the principal investigators in the research study.`);
+		setSnackbar({ open: true, message: `The sample text has been copied to clipboard!`, severity: 'success' });
+	}
+
 	const handleImport = () => {
 		// Todo
 	}
@@ -184,6 +189,7 @@ const ReplaceWizardContainer = () => {
 			handleNext={handleNext}
 			handlePrevious={handlePrevious}
 			handleCancel={handleCancel}
+			handleSampleText={handleSampleText}
 			nextDisabled={nextDisabled}
 			previousDisabled={previousDisabled}
 			currentStep={currentStep}

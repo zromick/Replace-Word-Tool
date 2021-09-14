@@ -4,13 +4,15 @@ import {
   TextareaAutosize,
   Typography,
   FormControlLabel,
-  Checkbox
+  Checkbox,
+  Link
 } from '@material-ui/core';
 import styles from '../styles.module.scss';
 
 export interface InputTextBodyProps {
   sortWords: () => void,
   setAutoExcludeOSPD: Dispatch<SetStateAction<boolean>>,
+  handleSampleText: () => void,
   autoExcludeOSPD: boolean,
 }
 
@@ -18,7 +20,9 @@ const InputTextBody = (props: InputTextBodyProps) => {
   const {
     sortWords,
     setAutoExcludeOSPD,
-    autoExcludeOSPD }
+    handleSampleText,
+    autoExcludeOSPD,
+  }
     = props;
   return (
     <Grid item container justify="center" xs={12}>
@@ -34,7 +38,7 @@ const InputTextBody = (props: InputTextBodyProps) => {
       <Grid item xs={12}>
         <div className={styles.introSpacing}>
           <Typography variant="body1" >
-            Enter a body of text below, or type one. Try pasting an <a href="https://en.wikipedia.org/wiki/React_(JavaScript_library)" target="_blank" rel="noopener noreferrer">article</a> or <a href="https://www.azlyrics.com/lyrics/queen/bohemianrhapsody.html" target="_blank" rel="noopener noreferrer">song lyrics</a>.
+            Enter a body of text below, or type one. Or try this <Link href='#' onClick={() => handleSampleText()}>sample text.</Link>
           </Typography>
         </div>
       </Grid>

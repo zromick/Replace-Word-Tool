@@ -52,7 +52,7 @@ const ManageWordsBody = (props: ManageWordsBodyProps) => {
               <Typography variant="body1" >
                 {`If a word is in the "Replacing" list, a blue plus sign`}
                 {<IconButton color="primary"><Add /></IconButton>}
-                {`will appear next to it.`}
+                {`will appear under to it.`}
               </Typography>
             </div>
           </Grid>

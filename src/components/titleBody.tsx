@@ -1,10 +1,9 @@
-import React from 'react';
-import { Grid, Typography, Input } from '@material-ui/core';
+import { Grid, Typography, Input, Link } from '@mui/material';
 
 const TitleBody = () => {
   return (
-    <Grid item container justify="center" xs={12}>
-      <Grid item container justify="center" xs={12}>
+    <Grid item container justifyContent="center" xs={12}>
+      <Grid item container justifyContent="center" xs={12}>
         <Typography variant="h3">
           <Input
             color="primary"
@@ -15,8 +14,8 @@ const TitleBody = () => {
           {` Word Tool`}
         </Typography>
       </Grid>
-      <Grid item container justify="center" xs={12}>
-        <Typography>An Experimental Word Replacement Tool By <a href="https://github.com/zromick">Zac Romick</a></Typography>
+      <Grid item container justifyContent="center" xs={12}>
+        <Typography>An Experimental Word Replacement Tool By <Link underline='hover' href="https://github.com/zromick">Zac Romick</Link></Typography>
       </Grid>
     </Grid>
   );

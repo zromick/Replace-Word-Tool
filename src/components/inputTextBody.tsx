@@ -6,7 +6,7 @@ import {
   FormControlLabel,
   Checkbox,
   Link
-} from '@material-ui/core';
+} from '@mui/material';
 import styles from '../styles.module.scss';
 
 export interface InputTextBodyProps {
@@ -25,8 +25,8 @@ const InputTextBody = (props: InputTextBodyProps) => {
   }
     = props;
   return (
-    <Grid item container justify="center" xs={12}>
-      <Grid item container justify="center" xs={12}>
+    <Grid item container justifyContent="center" xs={12}>
+      <Grid item container justifyContent="center" xs={12}>
         <div className={styles.basicMargin}>
           <Grid container item xs={12}>
             <Typography variant="h5">
@@ -38,7 +38,7 @@ const InputTextBody = (props: InputTextBodyProps) => {
       <Grid item xs={12}>
         <div className={styles.introSpacing}>
           <Typography variant="body1" >
-            Enter a body of text below, or type one. Or try pasting this <Link href='#' onClick={() => handleSampleText()}>sample text</Link> and follow the <Link href='https://github.com/zromick/Replace-Word-Tool/tree/main'>tutorial</Link> in the documentation.
+            Enter a body of text below, or type one. Or try pasting this <Link underline='hover' href='#' onClick={() => handleSampleText()}>sample text</Link> and follow the <Link underline='hover' href='https://github.com/zromick/Replace-Word-Tool/tree/main'>tutorial</Link> in the documentation.
           </Typography>
         </div>
       </Grid>
@@ -50,15 +50,15 @@ const InputTextBody = (props: InputTextBodyProps) => {
         </div>
       </Grid>
       <div id='pasteTextBody'>
-        <Grid item container justify="center" xs={12}>
+        <Grid item container justifyContent="center" xs={12}>
           <TextareaAutosize
             id="userTextArea"
             cols={80}
-            rowsMin={8}
+            minRows={8}
             onChange={() => sortWords()}
           />
         </Grid>
-        <Grid item container justify="center" xs={12}>
+        <Grid item container justifyContent="center" xs={12}>
           <div className={styles.basicMargin}>
             <FormControlLabel
               control={

@@ -3,13 +3,13 @@ import {
   Grid,
   Typography,
   // Button,
-} from '@material-ui/core';
+} from '@mui/material';
 import styles from '../styles.module.scss';
 
 const IntroductionBody = () => {
   return (
-    <Grid item container justify="center" xs={12}>
-      <Grid item container justify="center" xs={12}>
+    <Grid item container justifyContent="center" xs={12}>
+      <Grid item container justifyContent="center" xs={12}>
         <div className={styles.basicMargin}>
           <Grid container item xs={12}>
             <Typography variant="h5">
@@ -18,7 +18,7 @@ const IntroductionBody = () => {
           </Grid>
         </div>
       </Grid>
-      <Grid item container justify="center" xs={12} id='introductionBody'>
+      <Grid item container justifyContent="center" xs={12} id='introductionBody'>
         <Grid item xs={12}>
           <div className={styles.introSpacing}>
             <Typography variant="body1" >

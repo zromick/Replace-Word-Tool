@@ -4,7 +4,7 @@ import {
   Typography,
   Button,
   TextareaAutosize,
-} from '@material-ui/core';
+} from '@mui/material';
 import { SnackbarModel } from '../models';
 import styles from '../styles.module.scss';
 
@@ -19,8 +19,8 @@ const GenerateTextBody = (props: GenerateTextBodyProps) => {
     setSnackbar,
   } = props;
   return (
-    <Grid item container justify="center" xs={12}>
-      <Grid item container justify="center" xs={12}>
+    <Grid item container justifyContent="center" xs={12}>
+      <Grid item container justifyContent="center" xs={12}>
         <div className={styles.basicMargin}>
           <Grid container item xs={12}>
             <Typography variant="h5">
@@ -43,16 +43,16 @@ const GenerateTextBody = (props: GenerateTextBodyProps) => {
           </Typography>
         </div>
       </Grid>
-      <Grid item container justify="center" xs={12} id='GenerateTextBody'>
-        <Grid item container justify="center" xs={12}>
+      <Grid item container justifyContent="center" xs={12} id='GenerateTextBody'>
+        <Grid item container justifyContent="center" xs={12}>
           <TextareaAutosize
             className={styles.basicMargin}
             id="finalTextArea"
             cols={80}
-            rowsMin={8}
+            minRows={8}
           />
         </Grid>
-        <Grid item container justify="space-between" xs={12}>
+        <Grid item container justifyContent="space-between" xs={12}>
           <div className={styles.introMargin}>
             <Button
               color="primary"

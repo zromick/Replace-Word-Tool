@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { Snackbar } from '@material-ui/core';
+import { Snackbar } from '@mui/material';
 import { SnackbarModel } from '../models';
-import { Alert } from '@material-ui/lab';
+import { Alert } from '@mui/material';
 
 export interface GlobalSnackbarProps {
   setSnackbar: Dispatch<SetStateAction<SnackbarModel>>,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Input } from '@material-ui/core';
+import { Typography, Input } from '@mui/material';
 import _ from 'lodash';
 
 export interface ContextProps {

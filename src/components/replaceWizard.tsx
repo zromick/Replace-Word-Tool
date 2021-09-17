@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { Grid, Paper, Button, Box } from '@material-ui/core';
+import { Grid, Paper, Button, Box } from '@mui/material';
 import { Word, SnackbarModel } from '../models';
 import ReplaceWizardProgressBar from './replaceWizardProgressBar';
 import ReplaceWizardSteps from './replaceWizardSteps';
@@ -64,7 +64,7 @@ const ReplaceWizard = (props: ReplaceWizardProps) => {
   return (
     <div>
       <Grid className={styles.components} container spacing={3}>
-        <Grid container item xs={10} justify="center">
+        <Grid container item xs={10} justifyContent="center">
           <Grid item>
             <Paper elevation={2} className={styles.paper}>
               <TitleBody />
@@ -103,10 +103,10 @@ const ReplaceWizard = (props: ReplaceWizardProps) => {
             </Paper>
           </Grid>
         </Grid>
-        <Grid container item xs={10} justify="center">
+        <Grid container item xs={10} justifyContent="center">
           <Grid item>
             <Box className={styles.buttonBox}>
-              <Grid container xs={12} justify="space-between">
+              <Grid container xs={12} justifyContent="space-between">
                 <Grid item>
                   <Button
                     onClick={() => handleCancel()}

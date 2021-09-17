@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { Grid, Typography, IconButton } from '@material-ui/core';
+import { Grid, Typography, IconButton } from '@mui/material';
 import WordsWithContext from './wordsWithContext';
-import { Add } from '@material-ui/icons';
+import { Add } from '@mui/icons-material';
 import { Word, SnackbarModel } from '../models';
 import styles from '../styles.module.scss';
 
@@ -28,8 +28,8 @@ const ManageWordsBody = (props: ManageWordsBodyProps) => {
     allWordsRaw
   } = props;
   return (
-    <Grid item container justify="center" xs={12}>
-      <Grid item container justify="center" xs={12}>
+    <Grid item container justifyContent="center" xs={12}>
+      <Grid item container justifyContent="center" xs={12}>
         <div className={styles.basicMargin}>
           <Grid container item xs={12}>
             <Typography variant="h5">
@@ -39,7 +39,7 @@ const ManageWordsBody = (props: ManageWordsBodyProps) => {
         </div>
       </Grid>
       {allWordsRaw.length > 0
-        ? <Grid item container justify="center" xs={12}>
+        ? <Grid item container justifyContent="center" xs={12}>
           <Grid item xs={12}>
             <div className={styles.introSpacing}>
               <Typography variant="body1" >
@@ -51,7 +51,7 @@ const ManageWordsBody = (props: ManageWordsBodyProps) => {
             <div className={styles.introSpacing}>
               <Typography variant="body1" >
                 {`If a word is in the "Replacing" list, a blue plus sign`}
-                {<IconButton color="primary"><Add /></IconButton>}
+                {<IconButton color="primary" size="large"><Add /></IconButton>}
                 {`will appear under to it.`}
               </Typography>
             </div>

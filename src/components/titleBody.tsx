@@ -5,13 +5,13 @@ const TitleBody = () => {
     <Grid item container justifyContent="center" xs={12}>
       <Grid item container justifyContent="center" xs={12}>
         <Typography variant="h3">
-          <Input
+          {/* <Input
             color="primary"
             autoFocus
             defaultValue="Replace"
             inputProps={{ style: { fontSize: 45, width: 160 } }}
-          />
-          {` Word Tool`}
+          /> */}
+          {`Replace Word Tool`}
         </Typography>
       </Grid>
       <Grid item container justifyContent="center" xs={12}>

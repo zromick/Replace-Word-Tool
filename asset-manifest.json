@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/Replace-Word-Tool/static/css/main.221d5d76.chunk.css",
-    "main.js": "/Replace-Word-Tool/static/js/main.7e4cfe0f.chunk.js",
-    "main.js.map": "/Replace-Word-Tool/static/js/main.7e4cfe0f.chunk.js.map",
+    "main.js": "/Replace-Word-Tool/static/js/main.ed7ea3de.chunk.js",
+    "main.js.map": "/Replace-Word-Tool/static/js/main.ed7ea3de.chunk.js.map",
     "runtime-main.js": "/Replace-Word-Tool/static/js/runtime-main.9387c22c.js",
     "runtime-main.js.map": "/Replace-Word-Tool/static/js/runtime-main.9387c22c.js.map",
-    "static/js/2.56d835d5.chunk.js": "/Replace-Word-Tool/static/js/2.56d835d5.chunk.js",
-    "static/js/2.56d835d5.chunk.js.map": "/Replace-Word-Tool/static/js/2.56d835d5.chunk.js.map",
+    "static/js/2.ace24181.chunk.js": "/Replace-Word-Tool/static/js/2.ace24181.chunk.js",
+    "static/js/2.ace24181.chunk.js.map": "/Replace-Word-Tool/static/js/2.ace24181.chunk.js.map",
     "index.html": "/Replace-Word-Tool/index.html",
     "static/css/main.221d5d76.chunk.css.map": "/Replace-Word-Tool/static/css/main.221d5d76.chunk.css.map",
-    "static/js/2.56d835d5.chunk.js.LICENSE.txt": "/Replace-Word-Tool/static/js/2.56d835d5.chunk.js.LICENSE.txt"
+    "static/js/2.ace24181.chunk.js.LICENSE.txt": "/Replace-Word-Tool/static/js/2.ace24181.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9387c22c.js",
-    "static/js/2.56d835d5.chunk.js",
+    "static/js/2.ace24181.chunk.js",
     "static/css/main.221d5d76.chunk.css",
-    "static/js/main.7e4cfe0f.chunk.js"
+    "static/js/main.ed7ea3de.chunk.js"
   ]
 }

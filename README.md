@@ -1,4 +1,4 @@
-## Replace Word Tool
+## [Replace Word Tool](https://zromick.github.io/Replace-Word-Tool/)
 
 Hi! Welcome to a passion project of mine. This app is built using TypeScript, React, and Material-UI and is hosted on GitHub Pages.
 
